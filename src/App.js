@@ -12,13 +12,13 @@ import Settings from './components/settings'
 import SidebarA from './components/sidebar-a'
 import SidebarB from './components/sidebar-b'
 import Sports from './modules/sports'
-import Live from './modules/live';
-import PropsBuilder from './modules/props-builder';
-import Horses from './modules/horses';
-import Virtual from './modules/virtual';
-import Casino from './modules/casino';
-import LiveDealer from "./modules/live-dealer";
-import Event from './modules/event';
+import Live from './modules/live'
+import PropsBuilder from './modules/props-builder'
+import Horses from './modules/horses'
+import Virtual from './modules/virtual'
+import Casino from './modules/casino'
+import LiveDealer from './modules/live-dealer'
+import Event from './modules/event'
 
 const StyledLayout = styled.div`
   display: grid;
