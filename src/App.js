@@ -18,7 +18,7 @@ import Horses from './modules/horses'
 import Virtual from './modules/virtual'
 import Casino from './modules/casino'
 import LiveDealer from './modules/live-dealer'
-import Event from './modules/event'
+import Event from './modules/game'
 
 const StyledLayout = styled.div`
   display: grid;
