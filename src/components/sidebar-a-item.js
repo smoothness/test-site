@@ -69,6 +69,34 @@ const StyledSidebarAItem = styled.div`
       border-left: 4px solid #ff613b;
     }
   }
+
+  @media (max-width: 75rem) {
+    .heading {
+      justify-content: center;
+
+      .title {
+        display: none;
+      }
+    }
+
+    li span:not(:first-child) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .heading {
+      justify-content: flex-start;
+
+      .title {
+        display: flex;
+      }
+    }
+
+    li span:not(:first-child) {
+      display: flex;
+    }
+  }
 `
 
 function SidebarAItem({ sport, leagues, classes }) {

@@ -72,6 +72,10 @@ const StyledSettings = styled.div`
       }
     }
   }
+
+  @media (max-width: 48rem) {
+    display: none;
+  }
 `;
 
 function Settings() {

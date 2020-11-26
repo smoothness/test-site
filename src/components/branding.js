@@ -11,6 +11,14 @@ const StyledBranding = styled.div`
   img {
     width: 9.375rem;
   }
+
+  @media (max-width: 75rem) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 48rem) {
+    display: none;
+  }
 `;
 
 function Branding() {

@@ -46,6 +46,45 @@ const StyledLayout = styled.div`
       color: #333;
     }
   }
+
+  @media (max-width: 75rem) {
+    grid-template-columns: 2.5rem 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar__a main"
+      "footer footer";
+
+    .sidebar__a {
+      padding-left: 5px;
+      width: 2.5rem;
+    }
+
+    .sidebar__b {
+      display: none;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar__a"
+      "footer";
+
+    .sidebar__a {
+      padding: 5px;
+      width: calc(100% - 10px);
+    }
+
+    .sidebar__b,
+    main {
+      display: none;
+    }
+
+    .footer {
+      display: none;
+    }
+  }
 `;
 
 function App() {

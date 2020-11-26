@@ -36,6 +36,10 @@ const StyledMainNav = styled.nav`
     font-size: 0.875rem;
     text-transform: uppercase;
   }
+
+  @media (max-width: 48rem) {
+    display: none;
+  }
 `;
 
 function MainNav() {
