@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from "react-router-dom";
 import styled from 'styled-components'
 
 import newBadge from '../assets/images/new.png'
@@ -47,26 +48,26 @@ function MainNav() {
     <StyledMainNav>
       <ul>
         <li className="active">
-          <a href="#">Sports</a>
+          <Link to="/">Sports</Link>
         </li>
         <li>
-          <a href="#">Live</a>
+          <Link to="/live">Live</Link>
         </li>
         <li>
-          <a href="#">Props Builder</a>
+          <Link to="/props-builder">Props Builder</Link>
         </li>
         <li>
-          <a href="#">Horses</a>
+          <Link to="/horses">Horses</Link>
         </li>
         <li>
-          <a href="#">Virtual</a>
+          <Link to="/virtual">Virtual</Link>
         </li>
         <li>
           <a href="#">Casino</a>
         </li>
         <li className="live-dealer">
           <img className="new" src={newBadge} alt="new" />
-          <a href="#">Live Dealer</a>
+          <Link to="/live-dealer">Live Dealer</Link>
         </li>
       </ul>
     </StyledMainNav>

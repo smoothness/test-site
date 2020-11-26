@@ -1,3 +1,8 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import styled from 'styled-components'
 
 import './App.css';
@@ -7,6 +12,13 @@ import Settings from './components/settings'
 import SidebarA from './components/sidebar-a'
 import SidebarB from './components/sidebar-b'
 import Sports from './modules/sports'
+import Live from './modules/live';
+import PropsBuilder from './modules/props-builder';
+import Horses from './modules/horses';
+import Virtual from './modules/virtual';
+import Casino from './modules/casino';
+import LiveDealer from "./modules/live-dealer";
+import Event from './modules/event';
 
 const StyledLayout = styled.div`
   display: grid;
@@ -89,29 +101,56 @@ const StyledLayout = styled.div`
 
 function App() {
   return (
-    <div className="App">
-      <StyledLayout>
-        <header className="header">
-          <Branding />
-          <MainNav />
-          <Settings />
-        </header>
-        <aside className="sidebar__a">
-          <SidebarA />
-        </aside>
-        <main className="main" role="main">
-          <Sports />
-        </main>
-        <aside className="sidebar__b">
-          <SidebarB />
-        </aside>
-        <footer className="footer">
-          <p>
-            <small>Copyright © 2020 All rights reserved for NewPregamesiteCom</small>
-          </p>
-        </footer>
-      </StyledLayout>
-    </div>
+    <Router>
+      <div className="App">
+        <StyledLayout>
+          <header className="header">
+            <Branding />
+            <MainNav />
+            <Settings />
+          </header>
+          <aside className="sidebar__a">
+            <SidebarA />
+          </aside>
+          <main className="main" role="main">
+            <Switch>
+              <Route exact path="/">
+                <Sports />
+              </Route>
+              <Route exact path="/event/:id">
+                <Event />
+              </Route>
+              <Route path="/live">
+                <Live />
+              </Route>
+              <Route path="/props-builder">
+                <PropsBuilder />
+              </Route>
+              <Route path="/horses">
+                <Horses />
+              </Route>
+              <Route path="/virtual">
+                <Virtual />
+              </Route>
+              <Route path="/casino">
+                <Casino />
+              </Route>
+              <Route path="/live-dealer">
+                <LiveDealer />
+              </Route>
+            </Switch>
+          </main>
+          <aside className="sidebar__b">
+            <SidebarB />
+          </aside>
+          <footer className="footer">
+            <p>
+              <small>Copyright © 2020 All rights reserved for NewPregamesiteCom</small>
+            </p>
+          </footer>
+        </StyledLayout>
+      </div>
+    </Router>
   );
 }
 

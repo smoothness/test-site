@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom';
 import { User, Fire, Check, Star, DribbbleLogo, Clock } from "phosphor-react"
 
 const StyledSidebarAItem = styled.div`
@@ -100,6 +101,16 @@ const StyledSidebarAItem = styled.div`
 `
 
 function SidebarAItem({ sport, leagues, classes }) {
+  const history = useHistory();
+
+  function handleClick(league) {
+    const { title, id } = league
+
+    history.push({
+      pathname: `/event/${id}`,
+      state: { title }
+    })
+  }
   return (
     <StyledSidebarAItem className={classes}>
       <p className="heading">
@@ -121,12 +132,12 @@ function SidebarAItem({ sport, leagues, classes }) {
           {
             leagues.map((league, i) => {
               return (
-                <li key={i}>
+                <li key={i} onClick={() => handleClick(league)}>
                   <span className="check">
                     {sport === 'Featured' && <DribbbleLogo size={20} color="#222" />}
                     {sport !== 'Featured' && <Check size={18} color="#ff613b" />}
                   </span>
-                  <span>{ league }</span>
+                  <span>{ league.title }</span>
                   <span className="star">
                     <Star size={20} color="#cecece" />
                   </span>
